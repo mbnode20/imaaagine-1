@@ -6,8 +6,6 @@ import { CldImage, CldUploadWidget } from "next-cloudinary";
 import { PlaceholderValue } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
-const mbUploadPreset = process.env.CLOUDINARY_UPLOAD_PRESET!;
-
 type MediaUploaderProps = {
   onValueChange: (value: string) => void;
   setImage: React.Dispatch<any>;
@@ -24,6 +22,8 @@ const MediaUploader = ({
   type,
 }: MediaUploaderProps) => {
   const { toast } = useToast();
+
+  const mbUploadPreset = process.env.MY_UPLOAD_PRESET;
 
   const onUploadSuccessHandler = (result: any) => {
     setImage((prevState: any) => ({
@@ -55,8 +55,8 @@ const MediaUploader = ({
 
   return (
     <CldUploadWidget
-      uploadPreset={mbUploadPreset}
-      // uploadPreset="fbl3cjoh"
+      // uploadPreset={mbUploadPreset}
+      uploadPreset="fbl3cjoh"
       options={{
         multiple: false,
         resourceType: "image",
