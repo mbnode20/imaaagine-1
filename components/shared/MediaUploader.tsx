@@ -55,8 +55,8 @@ const MediaUploader = ({
 
   return (
     <CldUploadWidget
-      // uploadPreset={mbUploadPreset}
-      uploadPreset="fbl3cjoh"
+      uploadPreset={mbUploadPreset}
+      // uploadPreset="fbl3cjoh"
       options={{
         multiple: false,
         resourceType: "image",
